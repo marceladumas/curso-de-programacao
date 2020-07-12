@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+ola mundo
+<script>
+    //const meuNome = prompt("digia ai o seu nome");
+    //console.log(meuNome);
+    function perguntaNome (callback) {
+        const nome = prompt ("digita o seu nome");
+        callback (nome);
+    }
+    perguntaNome(function(nome){
+        console.log(nome);
+    })
+
+    const s = [1, 2, 3, 4].map(x=>x*x);
+    console.log(s);
+</script>
+</body>
+</html>

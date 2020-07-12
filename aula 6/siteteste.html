@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aula 06</title>
+</head>
+<body>
+
+<div>
+    <span>ID:</span>
+    <input id="id" type="text" disabled>
+</div>
+
+<div>
+    <span>Nome:</span>
+    <input id="nome" type="text" disabled>
+</div>
+
+<div>
+    <span>Username:</span>
+    <input id="username" type="text" disabled>
+</div>
+
+<div>
+    <span>Email:</span>
+    <input id="email" type="text" disabled>
+</div>
+<script>
+
+	/* const f = fetch('https://jsonplaceholder.typicode.com/users/1')
+
+    f.then(response => {
+        response.json().then(result => {
+            console.log(result);
+        });
+    })
+
+    /*fetch('https://jsonplaceholder.typicode.com/users/2')
+
+        .then(response => {
+            return response.json()
+        })
+
+        .then(user2 => {
+            console.log(user2);
+        });
+    */
+
+	/*    fetch('https://jsonplaceholder.typicode.com/users/2')
+
+            .then(response => response.json())
+            .then(user2 => {
+                console.log(user2);
+                document.getElementById("id").value = user2.id;
+                document.getElementById("nome").value = user2.name;
+                document.getElementById("username").value = user2.address.street;
+
+                return fetch('https://jsonplaceholder.typicode.com/users/3')
+            })
+            .then(response => response.json())
+            .then(user3 => {
+                console.log(user3);
+                document.getElementById("id").value = user3.id;
+                document.getElementById("nome").value = user3.name;
+                document.getElementById("username").value = user3.address.street;
+            })
+    ou: */
+	const baseUrl = 'https://jsonplaceholder.typicode.com';
+
+	function getUser(id) {
+		return fetch(`${baseUrl}/users/${id}`).then(response => response.json())
+	}
+
+	getUser('2')
+		.then(user2 => {
+			console.log(user2);
+			document.getElementById('id').value = user2.id;
+			document.getElementById('nome').value = user2.name;
+			document.getElementById('username').value = user2['username'];
+
+			return getUser('3')
+		})
+		.then(user3 => {
+			console.log(user3);
+			document.getElementById('id').value = user3.id;
+			document.getElementById('nome').value = user3.name;
+			document.getElementById('username').value = user3['username'];
+		})
+
+	getUser("2")
+		.then(user2 => {
+			console.log("2");
+		});
+	getUser("3")
+		.then(user3 => {
+			console.log("3");
+		});
+
+	Promise.all([
+		getUser("2"),
+		getUser("3"),
+	])
+		.then(r => {
+			console.log(r);
+		})
+
+</script>
+</body>
+</html>

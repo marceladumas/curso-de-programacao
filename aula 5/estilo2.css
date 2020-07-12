@@ -1,0 +1,24 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background-image: url('pexels-photo-433308.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+#dataNascimentoInput {
+
+}
+.minhaClasse {
+
+}
+.caixa-branca{
+    background-color: white;
+    margin: 70px;
+    padding: 20px;
+    width: 400px;
+    height: 550px;
+}

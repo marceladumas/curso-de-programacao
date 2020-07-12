@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity=384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+    <link rel="stylesheet" href="estilo2.css">
+</head>
+
+<body class="d-flex flex-column align-items-center">
+
+<div class="caixa-branca d-flex flex-column">
+<h2> Seus dados </h2>
+    <h5>Nome:</h5>
+    <h6 id="nome"></h6>
+    <h5>Data de nascimento:</h5>
+    <h6 id="dataNascimento"></h6>
+    <h5>Telefone:</h5>
+    <h6 id="telefone"></h6>
+    <h5>Curso:</h5>
+    <h6 id="curso"></h6>
+    <h5>Habilitacao:</h5>
+    <h6 id="habilitacao"></h6>
+    <h5>Rua:</h5>
+    <h6 id="rua"></h6>
+    <h5>Numero:</h5>
+    <h6 id="numero"></h6>
+    <h5>Cidade:</h5>
+    <h6 id="cidade"></h6>
+</div>
+</body>
+
+<script>
+    /*
+    const searchParams = location.search;
+    const url = searchParams.split("?")[1];
+    console.log(url);
+    const pedacos = url.split("&");
+    console.log(pedacos);
+    const todosPedacos = pedacos.map (pedaco => pedaco.split ("="));
+    console.log(todosPedacos);
+    */
+    const urlParams = new URLSearchParams(location.search);
+    const nome = urlParams.get("nome");
+    const dataNascimento = urlParams.get("dataNascimento");
+    const telefone = urlParams.get("telefone");
+    const curso = urlParams.get("curso");
+    const habilitacao = urlParams.get("habilitacao");
+    const rua = urlParams.get("rua");
+    const numero = urlParams.get("numero");
+    const cidade = urlParams.get("cidade");
+
+    console.log(nome, telefone, dataNascimento, curso, habilitacao, rua, numero, cidade);
+
+    document.getElementById("nome").innerText = `${nome}`;
+    document.getElementById("dataNascimento").innerText = `${dataNascimento}`;
+    document.getElementById("telefone").innerText = `${telefone}`;
+    document.getElementById("curso").innerText = `${curso}`;
+    document.getElementById("habilitacao").innerText = `${habilitacao}`;
+    document.getElementById("rua").innerText = `${rua}`;
+    document.getElementById("numero").innerText = `${numero}`;
+    document.getElementById("cidade").innerText = `${cidade}`;
+
+
+</script>
+</html>
